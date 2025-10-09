@@ -1,6 +1,4 @@
 ---
-title: Welcome to Quartz
+title: Hello there!
 ---
-
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+This site is a published version of the School Notes - a good place to catch up if you missed something in class, or if you don't take notes in a subject I teach.
