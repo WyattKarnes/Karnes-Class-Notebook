@@ -11,7 +11,7 @@ tags:
 ```java
 new Object(); // standalone instantiation
 
-Object o = new Object();
+Object o = new Object(); // usually you will see it done like this
 
 ```
 ### See also

@@ -12,7 +12,7 @@ tags:
 - Used to describe behaviors of objects in [[Object Oriented Programming|OOP]].
 - Methods only run when they are called.
 ### Syntax
-- [[Return Type|ReturnType]] [[Identifier]] ([[Parameter|Parameters]]) {body/code}
+- [[Modifier|Modifiers]] [[Return Type|ReturnType]] [[Identifier]] ([[Parameter|Parameters]]) {body/code}
 ### Examples
 ```java
 // void method, no parameters
