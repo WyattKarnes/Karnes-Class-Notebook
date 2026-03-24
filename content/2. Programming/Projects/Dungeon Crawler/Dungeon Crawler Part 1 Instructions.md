@@ -2,8 +2,8 @@
 - I have added some neat features to these instructions. 
 - For example, I have directly linked our notes so you won't have to go looking. 
 - Remember that you can not only click on a link to go to the full note, but hovering a link will activate a pop-up. In some cases, I have linked to specific parts of notes to make this faster for you. Try it here: [[Variable#^9b9956|Declare a Variable]].
-- I have also added spoilers, which look like green blobs in the text: ||made you look||. This lets me add hints for things like what [[Data Types.canvas|Data Type]] to use if you get stuck, without totally taking the challenge out for those of you who feel like you understand it. To clear a spoiler/cover it, just click on it. 
-- Try it here: || 👌gotcha hahaha ||
+- I have also added spoilers, which look like blank lines in the text: <span class="cloze-span">made you look</span>. This lets me add hints for things like what [[Data Types.canvas|Data Type]] to use if you get stuck, without totally taking the challenge out for those of you who feel like you understand it. To clear a spoiler/cover it, just click on it. 
+- Try it here: <span class="cloze-span">👌gotcha hahaha</span>
 ## Overview
 One of the earliest types of video games was the **text adventure**.
 
