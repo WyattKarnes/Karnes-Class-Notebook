@@ -2,8 +2,13 @@
 - I have added some neat features to these instructions. 
 - For example, I have directly linked our notes so you won't have to go looking. 
 - Remember that you can not only click on a link to go to the full note, but hovering a link will activate a pop-up. In some cases, I have linked to specific parts of notes to make this faster for you. Try it here: [[Variable#^9b9956|Declare a Variable]].
-- I have also added spoilers, which look like blank lines in the text: <span class="cloze-span">made you look</span>. This lets me add hints for things like what [[Data Types.canvas|Data Type]] to use if you get stuck, without totally taking the challenge out for those of you who feel like you understand it. To clear a spoiler/cover it, just click on it. 
-- Try it here: <span class="cloze-span">👌gotcha hahaha</span>
+- I have also added hints.
+>[!hint]-
+> made you look!
+- This lets me add hints for things like what [[Data Types.canvas|Data Type]] to use if you get stuck, without totally taking the challenge out for those of you who feel like you understand it. 
+- Try it here: 
+>[!hint]-
+>👌gotcha hahahahahahaha
 ## Overview
 One of the earliest types of video games was the **text adventure**.
 
@@ -74,9 +79,11 @@ You should be able to test your friends with the dungeon you create!
 
 #### Instance Variables
 - [ ] [[Declaration Statement|Declare]] a [[Variable]] for the **description** of the Treasure.
-	- use `||String||`
+>[!hint]-
+> use `String`
 - [ ] [[Declaration Statement|Declare]] an [[Variable]] for the **value** of the Treasure.
-	- use `||int||`
+ >[!hint]- 
+ >use `int`
 #### Constructor
 - [ ] [[Initialization|Initialize]] the **description** to a random one from the **Class Constant** list.
 - [ ] [[Initialization|Initialize]] the **value** to a random number.
@@ -85,7 +92,8 @@ You should be able to test your friends with the dungeon you create!
 - [ ] [[Method Overriding|Override]] `toString()` so that it:
 	- [[Return Statement|Returns]] a treasure's **description** and **value**.
 	- Example format: `A glittering gemstone, worth 50 gold pieces.`
-	- Combo: `description + " worth " + value + " gold pieces."`
+>[!hint]-
+>`description + " worth " + value + " gold pieces."`
 ### Room
 #### [[Modifier#^2c2980|Class Constant]] (static final)
 - [ ] [[Declaration Statement|Declare]] a `List` of `String` for Room Descriptions.
@@ -95,19 +103,26 @@ You should be able to test your friends with the dungeon you create!
 - [ ] Have a **minimum** of 3 descriptions.
 #### Instance Variables
 - [ ] [[Declaration Statement|Declare]] a [[Variable]] for the **description** of the Room.
-	- use `||String||` 
+>[!hint]-
+>use `String` 
 - [ ] [[Declaration Statement|Declare]] a [[Variable]] for the list of **treasures** in the Room. 
-	-  use `||ArrayList or LinkedList||` 
+>[!hint]-
+>use `ArrayList or LinkedList` 
 - [ ] [[Declaration Statement|Declare]] a [[Variable]] for if the room has a monster or not.
-	- use `||String||`
+>[!hint]-
+>use `String`
 #### Constructor
 - [ ] [[Initialization|Initialize]] the **description** with a random description from the **Class Constant** List.
 - [ ] [[Initialization|Initialize]] the **has monster** variable. 
 	- This should be a random chance. Try giving a monster a 1 in 4 (25%) chance of appearing.
 	- To prove you understand [[Boolean Expression|Boolean Expressions]], try doing this *without* an [[If Statement]].
-	- Hint 1: ||you don't need to cast Math.Random() here, or use a maximum OR a minimum.||
-	- Hint 2: `||hasMonster = Math.Random() > .75||`
+>[!hint]-
+>you don't need to cast Math.Random() here, or use a maximum OR a minimum.
+
+>[!hint]-
+>`hasMonster = Math.Random() > .75`
 - [ ] [[Initialization|Initialize]] the **treasure list**.
 - [ ] [[If Statement|If]] the room *does not* have a monster, add a random number of treasures (0-3) to the **treasure list**. 
-	- use ||a for loop that runs for a random number of times||
+>[!hint]-
+>use a [[For Loop]] that runs for a random number of times.
 #### Behaviors
