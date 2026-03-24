@@ -2,6 +2,7 @@
 aliases:
   - Return Statements
   - Returns
+  - Return
 tags:
   - concept
 ---

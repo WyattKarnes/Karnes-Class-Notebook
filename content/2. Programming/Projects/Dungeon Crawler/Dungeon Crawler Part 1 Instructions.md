@@ -105,9 +105,7 @@ You should be able to test your friends with the dungeon you create!
 - [ ] [[Declaration Statement|Declare]] a [[Variable]] for the **description** of the Room.
 >[!hint]-
 >use `String` 
-- [ ] [[Declaration Statement|Declare]] a [[Variable]] for the list of **treasures** in the Room. 
->[!hint]-
->use `ArrayList or LinkedList` 
+- [ ] [[Declaration Statement|Declare]] a [[List]] of `Treasure`.
 - [ ] [[Declaration Statement|Declare]] a [[Variable]] for if the room has a monster or not.
 >[!hint]-
 >use `String`
@@ -121,8 +119,32 @@ You should be able to test your friends with the dungeon you create!
 
 >[!hint]-
 >`hasMonster = Math.Random() > .75`
-- [ ] [[Initialization|Initialize]] the **treasure list**.
+- [ ] [[Initialization|Initialize]] the **treasure list**. ^36ae28
 - [ ] [[If Statement|If]] the room *does not* have a monster, add a random number of treasures (0-3) to the **treasure list**. 
 >[!hint]-
 >use a [[For Loop]] that runs for a random number of times.
 #### Behaviors
+- [ ] Write a [[Method]] called `explore()` that [[Return Statement|Returns]] a `String`
+	- [[If Statement|If]] the room has a monster: [[Return Statement|Return]] that a monster appears and attacks.
+	- [[If Statement|If]] the room has no treasure: [[Return Statement|Return]] that the room is empty.
+	-  [[If Statement|If]] the room has treasure: [[Return Statement|Return]] a description of the treasure(s).
+>[!hint]-
+>You can tell if a room is empty by checking if the [[Dungeon Crawler Part 1 Instructions#^18ae6c|list of treasures]] in it is empty.
+
+>[!hint]-
+>You can simply pass `treasureList.toString()`
+- [ ] Write a [[Method]] called `addTreasure()`
+	- Takes a `Treasure` as a [[Parameter]].
+	- Adds the `Treasure` to the room's treasure list.
+- [ ] [[Accessor Method|Accessor]] for the treasure list.
+- [ ] [[Method Overriding|Override]] the `toString()` [[Method]].
+	- Make it [[Return Statement|Return]] the **description** of the room.
+### Dungeon
+#### Instance Variables
+- [ ] [[Declaration Statement|Declare]] a [[List]] of `Room` objects.
+#### Constructor
+- [ ] Take a [[Parameter]] for the **number of rooms in the dungeon.**
+- [ ] [[Initialization|Initialize]] the **room list**
+- [ ] Use a [[For Loop|Loop]] to [[Instantiation|Instantiate]] a `Room` and add it to the **room list**. This loop should run **number of rooms** times.
+#### Behaviors
+- [ ] [[Accessor Method|Accessor]] for the **room list**

@@ -1,5 +1,6 @@
 ---
-aliases: 
+aliases:
+  - Instantiate
 tags:
   - vocab
 ---

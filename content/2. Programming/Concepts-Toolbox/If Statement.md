@@ -1,6 +1,7 @@
 ---
 aliases:
   - If Statements
+  - If
 tags:
   - concept
 ---
