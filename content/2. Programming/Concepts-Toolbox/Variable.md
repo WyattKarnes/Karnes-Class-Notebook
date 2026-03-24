@@ -10,7 +10,7 @@ tags:
 - In [[Object Oriented Programming]] variables can be used to represent the properties/attributes of an [[Object]].
 - Variables have two parts, [[Declaration Statement |Declaration]], [[Assignment Statement|Assignment]]
 ### Syntax
-- [[Modifier|Modifiers]] [[Data Types.canvas|DataType]] [[Identifier]];
+- [[Modifier|Modifiers]] [[Data Types.canvas|DataType]] [[Identifier]]; ^9b9956
 - [[Modifier|Modifiers]] [[Data Types.canvas|DataType]] [[Identifier]] = [[Sources of Values|Value]];
 - *Note: Modifiers are optional*
 ### Examples

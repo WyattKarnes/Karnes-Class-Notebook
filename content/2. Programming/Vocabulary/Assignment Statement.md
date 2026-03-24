@@ -1,6 +1,7 @@
 ---
 aliases:
   - Assignment
+  - Assign
 tags:
   - vocab
 ---

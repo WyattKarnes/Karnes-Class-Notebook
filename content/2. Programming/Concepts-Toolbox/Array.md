@@ -15,7 +15,7 @@ tags:
 #### Creation
 - [[Modifier|Modifiers]] [[Data Types.canvas|Data Type]] `[]` [[Identifier]]; (Declaration only)
 - [[Modifier|Modifiers]] [[Data Types.canvas|Data Type]] `[]` [[Identifier]] = new [[Data Types.canvas|Data Type]]`[#]`; (Initialization to an empty array)
-- [[Modifier|Modifiers]] [[Data Types.canvas|Data Type]] `[]` [[Identifier]] = {[[Sources of Values|Value]], [[Sources of Values|Value]], [[Sources of Values|Value]], ...}; (Initialize with default values)
+- [[Modifier|Modifiers]] [[Data Types.canvas|Data Type]] `[]` [[Identifier]] = {[[Sources of Values|Value]], [[Sources of Values|Value]], [[Sources of Values|Value]], ...}; (Initialize with default values) ^926427
 #### Usage
 - [[Identifier]]`[#]`; (retrieving a value from the array)
 - [[Identifier]]`[#]` = [[Sources of Values|Value]]; (assign a new value to an array index)

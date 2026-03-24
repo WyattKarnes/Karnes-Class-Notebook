@@ -9,8 +9,8 @@ tags:
 - Lists come in many forms. ArrayLists, LinkedLists, Doubly Linked Lists, etc. 
 ### Syntax
 #### Creation
-- ListType<Reference [[Data Types.canvas|Data Type]]>[[Identifier]];
-- ListType<Reference [[Data Types.canvas|Data Type]]>[[Identifier]] =  new ListType<>();
+- ListType<Reference [[Data Types.canvas|Data Type]]> [[Identifier]];
+- ListType<Reference [[Data Types.canvas|Data Type]]> [[Identifier]] =  new ListType<>();
 #### Usage
 >[!info]
 >Please note that these methods exist for all types of Listm because Lists are an interface.
@@ -25,5 +25,9 @@ tags:
 - [[Identifier]].indexOf([[Sources of Values|Value]]); (returns the index of a value, if it exists. Returns -1 if it doesn't.)
 - [[Identifier]].size();
 ### Examples
+```java
+
+```
+### See Also
 - [[Array List]]
 - [[Linked List]]

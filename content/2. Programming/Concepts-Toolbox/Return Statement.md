@@ -1,6 +1,7 @@
 ---
 aliases:
   - Return Statements
+  - Returns
 tags:
   - concept
 ---

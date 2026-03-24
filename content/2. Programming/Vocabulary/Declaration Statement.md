@@ -1,6 +1,7 @@
 ---
 aliases:
   - Declaration
+  - Declare
 tags:
   - vocab
 ---
