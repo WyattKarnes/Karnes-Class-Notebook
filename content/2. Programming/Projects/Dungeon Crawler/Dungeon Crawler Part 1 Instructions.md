@@ -137,7 +137,7 @@ You should be able to test your friends with the dungeon you create!
 	- Takes a `Treasure` as a [[Parameter]].
 	- Adds the `Treasure` to the room's treasure list.
 - [ ] [[Accessor Method|Accessor]] for the treasure list.
-- [ ] [[Method Overriding|Override]] the `toString()` [[Method]].
+- [ ] [[Method Overriding|Override]] the `toString()` [[Method]]. ^5366ab
 	- Make it [[Return Statement|Return]] the **description** of the room.
 ### Dungeon
 #### Instance Variables

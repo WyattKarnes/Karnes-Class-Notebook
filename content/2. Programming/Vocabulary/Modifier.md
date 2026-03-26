@@ -20,8 +20,8 @@ tags:
 
 ^2c2980
 
-- final
+- final ^1d2b42
 	- Marks a field as constant
-- static
+- static ^5e8c8e
 	- Marks something as class level
 ### See also
