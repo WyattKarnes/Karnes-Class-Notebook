@@ -79,9 +79,11 @@ You should be able to test your friends with the dungeon you create!
 
 #### Instance Variables
 - [ ] [[Declaration Statement|Declare]] a [[Variable]] for the **description** of the Treasure.
+
 >[!hint]-
 > use `String`
 - [ ] [[Declaration Statement|Declare]] an [[Variable]] for the **value** of the Treasure.
+
  >[!hint]- 
  >use `int`
 #### Constructor
@@ -103,10 +105,14 @@ You should be able to test your friends with the dungeon you create!
 - [ ] Have a **minimum** of 3 descriptions.
 #### Instance Variables
 - [ ] [[Declaration Statement|Declare]] a [[Variable]] for the **description** of the Room.
+
 >[!hint]-
 >use `String` 
+
+
 - [ ] [[Declaration Statement|Declare]] a [[List]] of `Treasure`.
 - [ ] [[Declaration Statement|Declare]] a [[Variable]] for if the room has a monster or not.
+
 >[!hint]-
 >use `String`
 #### Constructor
