@@ -82,10 +82,11 @@ You should be able to test your friends with the dungeon you create!
 
 >[!hint]-
 > use `String`
+
 - [ ] [[Declaration Statement|Declare]] an [[Variable]] for the **value** of the Treasure.
 
- >[!hint]- 
- >use `int`
+>[!hint]-
+>use `int`
 #### Constructor
 - [ ] [[Initialization|Initialize]] the **description** to a random one from the **Class Constant** list.
 - [ ] [[Initialization|Initialize]] the **value** to a random number.
