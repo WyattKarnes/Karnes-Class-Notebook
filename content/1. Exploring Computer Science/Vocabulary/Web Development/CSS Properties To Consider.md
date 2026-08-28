@@ -1,0 +1,17 @@
+- color
+- border
+- margin
+- padding
+- font-family
+- font-size
+- font-weight
+- text-align
+- text-decoration
+- background-color
+- background-image
+	- background-repeat
+	- background-size
+	- background-position
+- display
+	- justify-content
+	- align-items
