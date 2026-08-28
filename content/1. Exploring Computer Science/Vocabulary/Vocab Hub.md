@@ -1,6 +1,0 @@
-- [[Basic Computing]]
-- [[Computer Parts]]
-- [[Digital Citizenship]]
-- [[Problem Solving]]
-- [[Programming]]
-- [[Web Development]]
