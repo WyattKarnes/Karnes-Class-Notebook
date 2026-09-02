@@ -89,5 +89,31 @@ Please insure your site passes the HTML validation tests.
 
 ##### Upload to GitHub
 
-- [ ] Create folder called "03hand-coding" and put the two html files inside it.
-- [ ] Upload this folder to your "WebDevCE" repository.
+- [ ] Make a commit in VS-Code 
+- [ ] Push the commit to GitHub
+- [ ] Make sure that the website loads properly
+- [ ] Submit the URL to the website on Canvas
+
+## Tips for Meeting the Requirements
+
+### Home page (`index.html`)
+- Use this page for your **contact info** — an `<address>` block with your name, city, and phone number naturally covers the `address` tag, the `br` tag (line breaks between name/city/phone), and the `tel:` link all at once.
+- Write 1–2 real paragraphs introducing yourself, with 2 `h2` section headers (e.g. "About Me," "What You'll Find Here").
+
+### Hobbies page (`hobbies.html`)
+- Pick 2–3 real hobbies and describe each one — this is where the list tags fit naturally:
+  - **Unordered list**: gear/equipment needed for one hobby
+  - **Ordered list**: steps for how you do/practice the hobby
+- Work in `<em>` and `<strong>` where they'd naturally add emphasis in your writing — not on headings.
+- Use the bullet entity (`&bull;`) as a separator in a short list, e.g. a list of genres or categories.
+
+### Food page (`food.html`)
+- This is the best spot for the **definition list** — list 3+ favorite dishes as `<dt>` terms with a real one-sentence definition as `<dd>`. This is the requirement students forget most, so call it out explicitly.
+- Add your **two outbound links** here (`target="_blank"`) — link to a real recipe site or restaurant.
+
+### Across all three pages
+- Don't chase `h2`/`p` counts on one page — write genuinely, 1–2 paragraphs and a heading or two per page, and the site-wide totals (3+ `h2`, 4+ `p`) take care of themselves.
+- Reuse the same `<header>`, `<nav>`, and `<footer>` on all three pages — build it once, then copy it over so the meta tags, `span` site name, and `&copy;` entity stay consistent.
+
+### Before uploading
+- Run each page through the [W3C Validator](https://validator.w3.org/) and fix errors from the top down — an early missing closing tag often causes a cascade of false errors below it.

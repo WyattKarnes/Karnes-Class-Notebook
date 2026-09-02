@@ -1,5 +1,6 @@
 ---
-aliases: 
+aliases:
+  - ReturnType
 tags:
   - vocab
 ---
