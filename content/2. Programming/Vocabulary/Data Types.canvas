@@ -1,7 +1,7 @@
 {
 	"nodes":[
 		{"id":"73d9f92c08df73ba","type":"text","text":"# Data Types","x":-80,"y":-440,"width":320,"height":120},
-		{"id":"54c91d9600b5a29b","type":"text","text":"## Primitive Types\n---\n### Whole Numbers\n- byte (8 bit)\n- short (16 bit)\n- int (32 bit) \n- long (64 bit)\n---\n### Decimal Numbers\n- float (32 bit)\n- double (64 bit)\n---\n### Other\n- boolean (true/false)\n- char (a single text character)","x":-720,"y":-280,"width":640,"height":900},
+		{"id":"54c91d9600b5a29b","type":"text","text":"## Primitive Types\n---\n### Whole Numbers\n- byte (8 bit)\n- short (16 bit)\n- int (32 bit) \n- long (64 bit)\n---\n### Decimal Numbers\n- float (32 bit)\n- double (64 bit)\n---\n### Other\n- boolean (true/false)\n- char (a single text character)","x":-720,"y":-280,"width":640,"height":1080},
 		{"id":"8992e17cd0a3d083","type":"text","text":"## Reference Types\n---\n### Text\n- String (collections of chars)\n---\n### Wrappers\n- Byte\n- Short\n- Integer\n- Long\n- Float\n- Double\n- Boolean\n- Character\n---\n### Other\n- Any class that you write or import becomes a new reference type to use.","x":240,"y":-280,"width":600,"height":1120}
 	],
 	"edges":[
