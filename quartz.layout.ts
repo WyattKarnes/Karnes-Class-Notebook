@@ -22,7 +22,7 @@ export const defaultContentPageLayout: PageLayout = {
       condition: (page) => page.fileData.slug !== "index",
     }),
     Component.ArticleTitle(),
-    Component.CopyMarkdown({ stripFrontmatter: true }),
+    Component.CopyMarkdown({ stripFrontmatter: false }),
     Component.ContentMeta(),
     Component.TagList(),
   ],
