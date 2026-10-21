@@ -7,7 +7,7 @@ tags:
 ---
 ## Definition
 - A cycle of a loop.
-- Each time a loop runs, we refer that run as an iteration.
+- Each time a loop runs, we refer to that run as an iteration.
 ### See also
 - [[For Loop]]
 - [[While Loop]]

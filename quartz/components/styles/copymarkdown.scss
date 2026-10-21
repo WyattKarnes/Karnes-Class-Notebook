@@ -1,0 +1,66 @@
+.copy-markdown {
+  margin: 0.5rem 0 0 0;
+
+  .copy-markdown-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.25rem 0.6rem;
+    font-family: var(--bodyFont);
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--darkgray);
+    background-color: var(--light);
+    border: 1px solid var(--lightgray);
+    border-radius: 5px;
+    cursor: pointer;
+    transition:
+      border-color 0.2s ease,
+      color 0.2s ease;
+
+    &:hover {
+      color: var(--secondary);
+      border-color: var(--secondary);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--tertiary);
+      outline-offset: 2px;
+    }
+
+    &[data-state="copied"] {
+      color: var(--secondary);
+      border-color: var(--secondary);
+    }
+
+    &[data-state="manual"] {
+      color: var(--tertiary);
+      border-color: var(--tertiary);
+    }
+
+    .copy-markdown-icon {
+      flex-shrink: 0;
+    }
+  }
+
+  .copy-markdown-fallback {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 8rem;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    font-family: var(--codeFont);
+    font-size: 0.85rem;
+    color: var(--darkgray);
+    background-color: var(--light);
+    border: 1px solid var(--lightgray);
+    border-radius: 5px;
+    resize: vertical;
+  }
+}
+
+// Hide the button inside link-preview popovers.
+.popover .copy-markdown {
+  display: none;
+}

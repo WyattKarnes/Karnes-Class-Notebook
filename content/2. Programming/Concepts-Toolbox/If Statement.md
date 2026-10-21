@@ -10,7 +10,7 @@ tags:
 - Can work on individual [[Statement|Statements]] or with [[Code Block|Code Blocks]], though usually we use code blocks.
 - You can have as many `else if()` sections as you want in a chain after the original `if`, but if you want a plain `else`, it must come last.
 - Can be nested.
-- *Note: In a chain of if, if-else, if-else, if... when multiple conditions are true, ==only the FIRST true statement or block will run.== The rest will be skipped.*
+- *Note: In a chain of if, else-if, else-if... when multiple conditions are true, ==only the FIRST true statement or block will run.== The rest will be skipped.* 
 ### Syntax
 ---
 #### Without Blocks
