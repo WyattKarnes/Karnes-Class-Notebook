@@ -1,0 +1,861 @@
+/* Code Markup engine styles. Shared by every exercise. Colors follow the Quartz site theme. */
+
+:root {
+  --bg: #faf8f8;
+  --panel: #ffffff;
+  --code-bg: #f3f1f1;
+  --fg: #2b2b2b;
+  --muted: #4e4e4e;
+  --faint: #8a8a8a;
+  --border: #e5e5e5;
+  --accent: #284b63;
+  --accent-soft: rgba(40, 75, 99, 0.1);
+  --target-bg: rgba(255, 213, 0, 0.45);
+  --row-hover: rgba(40, 75, 99, 0.08);
+  --row-current: rgba(40, 75, 99, 0.06);
+  --ok: #1a7f37;
+  --ok-bg: rgba(26, 127, 55, 0.08);
+  --bad: #cf222e;
+  --bad-bg: rgba(207, 34, 46, 0.07);
+  --t0: #0969da;
+  --t1: #bc4c00;
+  --t2: #8250df;
+  --t3: #bf3989;
+  --t4: #7d6200;
+  --t5: #1b7c83;
+  /* syntax */
+  --s-keyword: #cf222e;
+  --s-type: #953800;
+  --s-class: #0550ae;
+  --s-string: #0a3069;
+  --s-number: #0550ae;
+  --s-comment: #6e7781;
+  --s-literal: #0550ae;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --bg: #161618;
+  --panel: #1c1c1f;
+  --code-bg: #202024;
+  --fg: #ebebec;
+  --muted: #d4d4d4;
+  --faint: #8b8b8b;
+  --border: #393639;
+  --accent: #02c865;
+  --accent-soft: rgba(2, 200, 101, 0.12);
+  --target-bg: rgba(210, 180, 0, 0.35);
+  --row-hover: rgba(255, 255, 255, 0.06);
+  --row-current: rgba(2, 200, 101, 0.06);
+  --ok: #3fb950;
+  --ok-bg: rgba(63, 185, 80, 0.1);
+  --bad: #ff7b72;
+  --bad-bg: rgba(255, 123, 114, 0.09);
+  --t0: #58a6ff;
+  --t1: #f0883e;
+  --t2: #bc8cff;
+  --t3: #f778ba;
+  --t4: #e3b341;
+  --t5: #56d4dd;
+  --s-keyword: #ff7b72;
+  --s-type: #ffa657;
+  --s-class: #79c0ff;
+  --s-string: #a5d6ff;
+  --s-number: #79c0ff;
+  --s-comment: #8b949e;
+  --s-literal: #79c0ff;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+body {
+  font-family:
+    "Source Sans Pro",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    system-ui,
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+.mk-app {
+  padding: 4px 2px 8px;
+  max-width: 100%;
+}
+
+code,
+.mk-code,
+.mk-ln,
+.mk-snippet {
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+p code,
+.mk-prompt code,
+.mk-find-prompt code,
+.mk-status code,
+.mk-explain code,
+.mk-instructions code {
+  font-size: 0.9em;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0 0.25em;
+}
+
+.mk-intro,
+.mk-instructions {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+}
+
+.mk-hint {
+  color: var(--faint);
+}
+
+/* ---------- Validation errors ---------- */
+
+.mk-errors {
+  border: 2px solid #cf222e;
+  background: #ffebe9;
+  color: #82071e;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+}
+.mk-errors p {
+  margin: 0.25rem 0;
+}
+.mk-errors ul {
+  margin: 0.25rem 0 0;
+  padding-left: 1.25rem;
+}
+
+/* ---------- Tabs ---------- */
+
+.mk-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1rem;
+}
+
+.mk-tab,
+.mk-file-tab {
+  font: inherit;
+  color: var(--muted);
+  background: none;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 6px 6px 0 0;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  margin-bottom: -1px;
+}
+.mk-tab:hover,
+.mk-file-tab:hover {
+  color: var(--accent);
+}
+.mk-tab.is-active,
+.mk-file-tab.is-active {
+  color: var(--fg);
+  font-weight: 600;
+  background: var(--bg);
+  border-color: var(--border);
+  border-bottom: 1px solid var(--bg);
+}
+.mk-tab:focus-visible,
+.mk-file-tab:focus-visible,
+.mk-btn:focus-visible,
+.mk-tool:focus-visible,
+.mk-find-item:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ---------- Code viewer ---------- */
+
+.mk-viewer {
+  margin: 0 0 1rem;
+}
+
+.mk-file-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  border-bottom: 1px solid var(--border);
+}
+.mk-file-tab {
+  font-size: 0.9rem;
+  padding: 0.25rem 0.7rem;
+}
+.mk-file-tab.is-active {
+  background: var(--code-bg);
+  border-bottom-color: var(--code-bg);
+}
+.mk-file-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 0.25rem;
+}
+
+.mk-code-block {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 0 0 8px 8px;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+}
+.mk-file-name + .mk-code-block {
+  border-radius: 8px;
+}
+
+.mk-lines {
+  width: max-content;
+  min-width: 100%;
+}
+
+.mk-row {
+  display: flex;
+  align-items: stretch;
+  font-size: 14px;
+  line-height: 1.9;
+  min-height: 1.9em;
+}
+.mk-row.is-current {
+  background: var(--row-current);
+}
+.mk-row.is-clickable {
+  cursor: pointer;
+}
+.mk-row.is-clickable:hover {
+  background: var(--row-hover);
+}
+.mk-row.is-chosen {
+  background: var(--accent-soft);
+}
+
+.mk-gutter {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.25rem;
+  min-width: 3.25rem;
+  padding: 0 0.75rem 0 0.5rem;
+  background: var(--code-bg);
+  border-right: 1px solid var(--border);
+  user-select: none;
+  -webkit-user-select: none;
+}
+.mk-row.is-current .mk-gutter,
+.mk-row.is-chosen .mk-gutter {
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+.mk-ln {
+  color: var(--faint);
+  font-size: 13px;
+  text-align: right;
+  min-width: 1.5em;
+}
+.mk-badges {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-right: 1rem;
+}
+.mk-badge {
+  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-size: 11px;
+  line-height: 1.5;
+  padding: 0 4px;
+  border-radius: 4px;
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+}
+.mk-badge.is-ok {
+  background: var(--ok);
+}
+.mk-badge.is-bad {
+  background: var(--bad);
+  text-decoration: line-through;
+}
+.mk-badge.is-active {
+  box-shadow: 0 0 0 2px var(--fg);
+}
+
+.mk-code {
+  white-space: pre;
+  padding: 0 1rem 0 0.75rem;
+  tab-size: 4;
+  -moz-tab-size: 4;
+}
+
+/* syntax colors */
+.mk-k-keyword {
+  color: var(--s-keyword);
+}
+.mk-k-type {
+  color: var(--s-type);
+}
+.mk-k-class {
+  color: var(--s-class);
+}
+.mk-k-string {
+  color: var(--s-string);
+}
+.mk-k-number,
+.mk-k-literal {
+  color: var(--s-number);
+}
+.mk-k-comment {
+  color: var(--s-comment);
+  font-style: italic;
+}
+
+/* Part A target */
+.mk-target {
+  background: var(--target-bg);
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px var(--target-bg);
+  font-weight: 600;
+}
+
+/* ---------- Cards (Name It, Bonus) ---------- */
+
+.mk-cards {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+  display: grid;
+  gap: 0.6rem;
+}
+.mk-card {
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--border);
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  background: var(--panel);
+  min-width: 0;
+}
+.mk-card.is-active {
+  border-left-color: var(--accent);
+}
+.mk-card.is-ok {
+  border-left-color: var(--ok);
+  background: var(--ok-bg);
+}
+.mk-card.is-bad {
+  border-left-color: var(--bad);
+  background: var(--bad-bg);
+}
+.mk-card-head {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+.mk-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.7em;
+  height: 1.7em;
+  padding: 0 0.3em;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--fg);
+  font-weight: 700;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+.mk-where {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.mk-prompt {
+  margin-bottom: 0.35rem;
+}
+
+.mk-snippet {
+  display: flex;
+  align-items: center;
+  overflow-x: auto;
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 2;
+  margin-bottom: 0.5rem;
+}
+.mk-snippet .mk-ln {
+  padding: 0 0.6rem 0 0.5rem;
+  border-right: 1px solid var(--border);
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+}
+
+.mk-pickers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+}
+.mk-picker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  max-width: 100%;
+}
+.mk-select,
+.mk-input {
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--fg);
+  background: var(--bg);
+  border: 1px solid var(--faint);
+  border-radius: 6px;
+  padding: 0.3rem 0.5rem;
+  max-width: 100%;
+}
+.mk-select {
+  min-width: 12rem;
+}
+.mk-input {
+  min-width: 14rem;
+}
+.mk-select.is-ok,
+.mk-input.is-ok {
+  border: 2px solid var(--ok);
+}
+.mk-select.is-bad,
+.mk-input.is-bad {
+  border: 2px dashed var(--bad);
+}
+.mk-mark {
+  font-weight: 700;
+  min-width: 1em;
+}
+.mk-mark.is-ok {
+  color: var(--ok);
+}
+.mk-mark.is-bad {
+  color: var(--bad);
+}
+
+.mk-explain {
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  background: var(--accent-soft);
+}
+
+/* ---------- Find It ---------- */
+
+.mk-find-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.75rem;
+  display: grid;
+  gap: 0.35rem;
+}
+.mk-find-item {
+  font: inherit;
+  color: var(--fg);
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--border);
+  border-radius: 8px;
+  padding: 0.45rem 0.7rem;
+  cursor: pointer;
+}
+.mk-find-item:hover {
+  border-color: var(--accent);
+}
+.mk-find-item.is-active {
+  border-color: var(--accent);
+  border-left-width: 4px;
+  box-shadow: 0 0 0 1px var(--accent);
+}
+.mk-find-item.is-ok {
+  border-left-color: var(--ok);
+  background: var(--ok-bg);
+}
+.mk-find-item.is-bad {
+  border-left-color: var(--bad);
+  background: var(--bad-bg);
+}
+.mk-find-prompt {
+  flex: 1 1 14rem;
+}
+.mk-answer {
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+.mk-answer.is-empty {
+  font-weight: 400;
+  color: var(--faint);
+  font-style: italic;
+}
+
+.mk-status {
+  background: var(--accent-soft);
+  border-radius: 6px;
+  padding: 0.45rem 0.7rem;
+  margin: 0 0 0.6rem;
+}
+
+/* ---------- Mark It Up ---------- */
+
+.mk-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.6rem;
+}
+.mk-tool {
+  font: inherit;
+  color: var(--fg);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.35rem 0.7rem;
+  cursor: pointer;
+}
+.mk-tool:hover {
+  border-color: var(--tc);
+}
+.mk-tool.is-active {
+  border: 2px solid var(--tc);
+  padding: calc(0.35rem - 1px) calc(0.7rem - 1px);
+  font-weight: 600;
+}
+.mk-sample {
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.85rem;
+  padding: 0 0.2em;
+  margin: 0 0.15em;
+}
+.mk-count {
+  font-size: 0.8rem;
+  color: var(--muted);
+  background: var(--code-bg);
+  border-radius: 999px;
+  padding: 0 0.45em;
+}
+
+.mk-tool-0 {
+  --tc: var(--t0);
+}
+.mk-tool-1 {
+  --tc: var(--t1);
+}
+.mk-tool-2 {
+  --tc: var(--t2);
+}
+.mk-tool-3 {
+  --tc: var(--t3);
+}
+.mk-tool-4 {
+  --tc: var(--t4);
+}
+.mk-tool-5 {
+  --tc: var(--t5);
+}
+
+.mk-tok.is-clickable {
+  cursor: pointer;
+  border-radius: 3px;
+}
+.mk-tok.is-clickable:hover {
+  background: var(--row-hover);
+  box-shadow: 0 0 0 1px var(--faint);
+}
+.mk-cand {
+  cursor: pointer;
+  border-radius: 3px;
+}
+.mk-cand.is-hover {
+  background: var(--row-hover);
+  box-shadow: 0 0 0 1px var(--faint);
+}
+
+/* Marks: drawn with box-shadow / decorations so nothing shifts the code layout.
+   Each shape is different, so marks never rely on color alone. */
+.mk-tag {
+  position: relative;
+}
+.mk-mark-circle {
+  border-radius: 1em;
+  box-shadow: 0 0 0 2px var(--tc);
+}
+.mk-mark-box {
+  border-radius: 1px;
+  box-shadow:
+    0 0 0 2px var(--bg),
+    0 0 0 4px var(--tc);
+}
+.mk-mark-underline {
+  box-shadow: inset 0 -3px 0 var(--tc);
+}
+.mk-mark-double-underline {
+  background:
+    linear-gradient(var(--tc), var(--tc)) left bottom / 100% 2px no-repeat,
+    linear-gradient(var(--tc), var(--tc)) left calc(100% - 4px) / 100% 2px no-repeat;
+}
+.mk-mark-wavy {
+  text-decoration: underline wavy var(--tc);
+  -webkit-text-decoration: underline wavy var(--tc);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+.mk-mark-star {
+  text-decoration: underline dotted var(--tc);
+  -webkit-text-decoration: underline dotted var(--tc);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+.mk-mark-star::after {
+  content: "★";
+  position: absolute;
+  top: -0.85em;
+  right: -0.55em;
+  font-size: 0.85em;
+  line-height: 1;
+  color: var(--tc);
+  pointer-events: none;
+}
+.mk-mark-highlight {
+  background: color-mix(in srgb, var(--tc) 28%, transparent);
+  border-radius: 3px;
+}
+.mk-sample.mk-mark-star::after {
+  top: -0.6em;
+}
+
+/* Check feedback on marks: symbol + color */
+.mk-fb-ok::before,
+.mk-fb-bad::before,
+.mk-missed::before {
+  position: absolute;
+  top: -0.95em;
+  left: -0.45em;
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-size: 0.75em;
+  font-weight: 700;
+  line-height: 1;
+  padding: 1px 2px;
+  border-radius: 3px;
+  pointer-events: none;
+  z-index: 1;
+}
+.mk-fb-ok::before {
+  content: "✓";
+  color: #fff;
+  background: var(--ok);
+}
+.mk-fb-bad::before {
+  content: "✗";
+  color: #fff;
+  background: var(--bad);
+}
+.mk-missed {
+  position: relative;
+  outline: 2px dashed var(--tc);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+.mk-missed::before {
+  content: "?";
+  color: var(--fg);
+  background: var(--bg);
+  border: 1px solid var(--tc);
+}
+
+.mk-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: -0.5rem 0 0.75rem;
+}
+.mk-legend[hidden] {
+  display: none;
+}
+.mk-legend-sym {
+  display: inline-block;
+  font-weight: 700;
+  padding: 0 4px;
+  border-radius: 3px;
+  color: #fff;
+}
+.mk-legend-sym.is-ok {
+  background: var(--ok);
+}
+.mk-legend-sym.is-bad {
+  background: var(--bad);
+}
+.mk-legend-sym.is-missed {
+  color: var(--fg);
+  border: 2px dashed var(--faint);
+}
+
+.mk-tool-results {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+}
+
+/* ---------- Buttons, check bar, footer ---------- */
+
+.mk-btn {
+  font: inherit;
+  border-radius: 6px;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--fg);
+}
+.mk-btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+}
+.mk-btn-primary:hover {
+  filter: brightness(1.1);
+}
+.mk-btn-quiet {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.mk-btn-quiet.is-armed {
+  border-color: var(--bad);
+  color: var(--bad);
+}
+
+.mk-checkbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0.25rem 0 0.5rem;
+}
+.mk-result {
+  font-weight: 600;
+}
+
+.mk-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.25rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ---------- Score ---------- */
+
+.mk-name-row {
+  margin-bottom: 0.75rem;
+}
+.mk-score-card {
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  background: var(--panel);
+  max-width: 34rem;
+}
+.mk-score-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+.mk-score-name {
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+.mk-score-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+.mk-score-table th {
+  white-space: nowrap;
+}
+.mk-score-table th,
+.mk-score-table td {
+  text-align: left;
+  padding: 0.3rem 0.5rem 0.3rem 0;
+  border-top: 1px solid var(--border);
+  vertical-align: top;
+}
+.mk-score-num {
+  white-space: nowrap;
+  font-weight: 600;
+}
+.mk-score-detail {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.mk-score-total {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  border-top: 2px solid var(--border);
+  margin-top: 0.25rem;
+  padding-top: 0.5rem;
+  font-weight: 600;
+}
+.mk-score-big {
+  font-size: 1.5rem;
+}
+.mk-score-time {
+  color: var(--faint);
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 520px) {
+  .mk-select,
+  .mk-input {
+    min-width: 0;
+    width: 100%;
+  }
+  .mk-picker {
+    width: 100%;
+  }
+}

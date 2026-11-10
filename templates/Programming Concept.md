@@ -12,9 +12,3 @@ tags:
 //...
 ```
 
-#### My Example
-```java
-//...
-```
-### Check Your Understanding Questions
-

@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Arcade Code Markup</title>
+    <link rel="stylesheet" href="../markup-engine/engine.css" />
+  </head>
+  <body>
+    <div id="markup-app"></div>
+
+    <!-- ===== Code files: paste Java exactly as students should see it ===== -->
+<script type="text/plain" data-file="Main.java">
+public class Main {
+    public static void main(String[] args) {
+        Arcade arcade = new Arcade();
+        int myTokens = 20;
+        boolean isMember = true;
+        double cardPrice = 5.50;
+
+        myTokens = arcade.playGames(myTokens, 4);
+        String prize = arcade.getPrize(myTokens * 25);
+
+        if (isMember && myTokens > 0) {
+            cardPrice = cardPrice / 2;
+        }
+        arcade.printReceipt("Jordan", cardPrice);
+    }
+}
+</script>
+
+<script type="text/plain" data-file="Arcade.java">
+public class Arcade {
+
+    // Each game costs 3 tokens
+    public int playGames(int tokens, int games) {
+        int cost = 3;
+        for (int i = 0; i < games; i++) {
+            tokens = tokens - cost;
+        }
+        return tokens;
+    }
+
+    public String getPrize(int tickets) {
+        if (tickets >= 500) {
+            return "Giant Panda";
+        } else if (tickets >= 100) {
+            return "Yo-yo";
+        } else {
+            return "Sticker";
+        }
+    }
+
+    public void printReceipt(String name, double price) {
+        System.out.println(name + " paid $" + price);
+    }
+}
+</script>
+
+    <!-- ===== Exercise data (schema: markup-engine/AUTHORING.md) ===== -->
+    <script>
+      const EXERCISE = {
+        id: "arcade-markup",
+        title: "Arcade Code Markup",
+        intro:
+          "Read both files first: `Main.java` uses the `Arcade` class. Work through each part, press **Check** to see how you did, and fix anything marked wrong.",
+        files: ["Main.java", "Arcade.java"],
+
+        wordBank: [
+          "argument",
+          "arithmetic operator",
+          "assignment",
+          "boolean",
+          "class",
+          "comment",
+          "concatenation",
+          "condition",
+          "data type",
+          "declaration",
+          "else if",
+          "identifier",
+          "increment operator",
+          "initialization",
+          "instantiation",
+          "logical operator",
+          "method call",
+          "method header",
+          "object",
+          "parameter",
+          "relational operator",
+          "return statement",
+          "return type",
+          "String literal",
+          "void",
+        ],
+
+        nameIt: {
+          items: [
+            { target: { file: "Main.java", line: 3, text: "arcade" }, answers: ["identifier"], alsoAccept: ["object"] },
+            { target: { file: "Main.java", line: 3, text: "new Arcade()" }, answers: ["instantiation", "initialization"] },
+            { target: { file: "Main.java", line: 4, text: "int" }, answers: ["data type"] },
+            { target: { file: "Main.java", line: 5, text: "true" }, answers: ["boolean"] },
+            { target: { file: "Main.java", line: 8, text: "arcade.playGames(myTokens, 4)" }, answers: ["method call"] },
+            { target: { file: "Main.java", line: 8, text: "myTokens, 4" }, answers: ["argument"] },
+            { target: { file: "Main.java", line: 11, text: "&&" }, answers: ["logical operator"] },
+            { target: { file: "Main.java", line: 11, text: ">" }, answers: ["relational operator"] },
+            { target: { file: "Main.java", line: 12, text: "cardPrice = cardPrice / 2;" }, answers: ["assignment"] },
+            { target: { file: "Main.java", line: 12, text: "/" }, answers: ["arithmetic operator"] },
+            { target: { file: "Arcade.java", line: 3, text: "// Each game costs 3 tokens" }, answers: ["comment"] },
+            { target: { file: "Arcade.java", line: 4, text: "int", occurrence: 1 }, answers: ["return type"] },
+            { target: { file: "Arcade.java", line: 4, text: "int tokens, int games" }, answers: ["parameter"] },
+            { target: { file: "Arcade.java", line: 6, text: "int i = 0" }, answers: ["declaration", "initialization"] },
+            { target: { file: "Arcade.java", line: 6, text: "i < games" }, answers: ["condition"] },
+            { target: { file: "Arcade.java", line: 6, text: "++" }, answers: ["increment operator"] },
+            { target: { file: "Arcade.java", line: 9, text: "return tokens;" }, answers: ["return statement"] },
+            { target: { file: "Arcade.java", line: 12, text: "public String getPrize(int tickets)" }, answers: ["method header"] },
+            { target: { file: "Arcade.java", line: 14, text: "\"Giant Panda\"" }, answers: ["String literal"] },
+            { target: { file: "Arcade.java", line: 22, text: "void" }, answers: ["return type"], alsoAccept: ["void"] },
+            { target: { file: "Arcade.java", line: 23, text: "+", occurrence: 1 }, answers: ["concatenation"] },
+          ],
+        },
+
+        findIt: {
+          items: [
+            {
+              prompt: "a method call with exactly one argument",
+              lines: [{ file: "Main.java", line: 9 }, { file: "Arcade.java", line: 23 }],
+            },
+            {
+              prompt: "a variable whose data type is `double`",
+              lines: [{ file: "Main.java", line: 6 }, { file: "Arcade.java", line: 22 }],
+            },
+            { prompt: "an `else if`", lines: [{ file: "Arcade.java", line: 15 }] },
+            { prompt: "a method whose return type is `String`", lines: [{ file: "Arcade.java", line: 12 }] },
+            { prompt: "an arithmetic operator used inside an argument", lines: [{ file: "Main.java", line: 9 }] },
+            {
+              prompt: "a variable that gets a new value after it was declared (not Main.java line 8 or 12)",
+              lines: [{ file: "Arcade.java", line: 7 }, { file: "Arcade.java", line: 6 }],
+            },
+            { prompt: "the keyword used for instantiation", lines: [{ file: "Main.java", line: 3 }] },
+          ],
+        },
+
+        markUp: {
+          files: ["Arcade.java"],
+          tools: [
+            {
+              id: "dataType",
+              label: "data type",
+              mark: "circle",
+              hint: "`void` doesn't count. There are 9.",
+              select: "token",
+              targets: [
+                { line: 4, text: "int", occurrence: 1 },
+                { line: 4, text: "int", occurrence: 2 },
+                { line: 4, text: "int", occurrence: 3 },
+                { line: 5, text: "int" },
+                { line: 6, text: "int" },
+                { line: 12, text: "String" },
+                { line: 12, text: "int" },
+                { line: 22, text: "String" },
+                { line: 22, text: "double" },
+              ],
+            },
+            {
+              id: "methodHeader",
+              label: "method header",
+              mark: "box",
+              hint: "There are 3.",
+              select: "unit",
+              targets: [
+                { line: 4, text: "public int playGames(int tokens, int games)" },
+                { line: 12, text: "public String getPrize(int tickets)" },
+                { line: 22, text: "public void printReceipt(String name, double price)" },
+              ],
+              decoys: [
+                { line: 1, text: "public class Arcade" },
+                { line: 6, text: "for (int i = 0; i < games; i++)" },
+                { line: 13, text: "if (tickets >= 500)" },
+                { line: 23, text: "System.out.println(name + \" paid $\" + price)" },
+              ],
+            },
+            {
+              id: "condition",
+              label: "condition",
+              mark: "underline",
+              hint: "There are 3.",
+              select: "unit",
+              targets: [
+                { line: 6, text: "i < games" },
+                { line: 13, text: "tickets >= 500" },
+                { line: 15, text: "tickets >= 100" },
+              ],
+              decoys: [
+                { line: 6, text: "int i = 0" },
+                { line: 6, text: "i++" },
+                { line: 7, text: "tokens - cost" },
+                { line: 23, text: "name + \" paid $\" + price" },
+              ],
+            },
+            {
+              id: "varDecl",
+              label: "variable declaration (in a method body)",
+              mark: "star",
+              hint: "Mark the variable's name. Parameters don't count. There are 2.",
+              select: "token",
+              targets: [
+                { line: 5, text: "cost" },
+                { line: 6, text: "i" },
+              ],
+            },
+          ],
+        },
+
+        bonus: {
+          items: [
+            {
+              prompt: "What is stored in `prize` after Main.java, line 9 runs?",
+              answers: ["Yo-yo"],
+              explanation:
+                "`myTokens` becomes 8 (20 tokens minus 4 games × 3). Then 8 × 25 = 200 tickets, which fails `tickets >= 500` but passes `tickets >= 100`, so `getPrize` returns `\"Yo-yo\"`.",
+            },
+          ],
+        },
+      }
+    </script>
+    <script src="../markup-engine/engine.js"></script>
+  </body>
+</html>
